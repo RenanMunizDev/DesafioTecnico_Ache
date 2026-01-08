@@ -1,0 +1,6 @@
+@DesafioTecnico_Ache.API_HostAddress = http://localhost:5117
+
+GET {{DesafioTecnico_Ache.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
