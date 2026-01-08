@@ -400,14 +400,14 @@ Este projeto foi desenvolvido como parte de um desafio técnico.
 
 ## Conformidade
 
-? **API REST** em .NET 8 (LTS)  
-? **GET + POST** implementados  
-? **Integração SAP** S/4HANA SD (OData)  
-? **Dados mockados** funcionais  
-? **Código limpo** e bem estruturado  
-? **Boas práticas** (SOLID, DRY, KISS)  
-? **Padrão de projeto** (Clean Architecture + CQRS)  
-? **Segurança OWASP** implementada  
+**API REST** em .NET 8 (LTS)  
+**GET + POST** implementados  
+**Integração SAP** S/4HANA SD (OData)  
+**Dados mockados** funcionais  
+**Código limpo** e bem estruturado  
+**Boas práticas** (SOLID, DRY, KISS)  
+**Padrão de projeto** (Clean Architecture + CQRS)  
+**Segurança OWASP** implementada  
 
 ---
 
