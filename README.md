@@ -1,4 +1,4 @@
-# ?? Desafio Técnico Aché - Integração SAP S/4HANA SD
+# Desafio Técnico Aché - Integração SAP S/4HANA SD
 
 [![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -8,47 +8,47 @@
 
 ---
 
-## ?? Sobre o Projeto
+## Sobre o Projeto
 
 Esta solução implementa operações de **GET** e **POST** para gerenciamento de pedidos de venda com dados mockados, simulando integração real com SAP.
 
-### ? Características Principais
+### Características Principais
 
-- ? API REST completa com GET e POST
-- ? Integração SAP S/4HANA SD via OData (mockado)
-- ? Clean Architecture + CQRS
-- ? Segurança OWASP implementada
-- ? Documentação Swagger/OpenAPI
-- ? Dados mock realistas
+- API REST completa com GET e POST
+- Integração SAP S/4HANA SD via OData (mockado)
+- Clean Architecture + CQRS
+- Segurança OWASP implementada
+- Documentação Swagger/OpenAPI
+- Dados mock realistas
 
 ---
 
-## ??? Arquitetura
+## Arquitetura
 
 **Padrão**: Clean Architecture + CQRS
 
 ```
 src/
-??? ?? DesafioTecnico_Ache.API/          # Camada de Apresentação
-?   ??? Controllers/                      # Controllers REST
-?   ??? Middleware/                       # Security & Error Handling
-?   ??? Program.cs                        # DI Container & Startup
+??? DesafioTecnico_Ache.API/          # Camada de Apresentação
+?   ??? Controllers/                   # Controllers REST
+?   ??? Middleware/                    # Security & Error Handling
+?   ??? Program.cs                     # DI Container & Startup
 ?
-??? ?? DesafioTecnico_Ache.Application/  # Camada de Aplicação
-?   ??? Commands/                         # Write Operations (CQRS)
-?   ??? Queries/                          # Read Operations (CQRS)
-?   ??? DTOs/                             # Data Transfer Objects
+??? DesafioTecnico_Ache.Application/  # Camada de Aplicação
+?   ??? Commands/                      # Write Operations (CQRS)
+?   ??? Queries/                       # Read Operations (CQRS)
+?   ??? DTOs/                          # Data Transfer Objects
 ?
-??? ?? DesafioTecnico_Ache.Domain/       # Camada de Domínio
-?   ??? Entities/                         # Domain Models
-?   ??? Interfaces/                       # Abstractions
+??? DesafioTecnico_Ache.Domain/       # Camada de Domínio
+?   ??? Entities/                      # Domain Models
+?   ??? Interfaces/                    # Abstractions
 ?
-??? ?? DesafioTecnico_Ache.Infrastructure/ # Camada de Infraestrutura
-    ??? Repositories/                      # Data Access
-    ??? SAP/                               # SAP Integration (Mock)
+??? DesafioTecnico_Ache.Infrastructure/ # Camada de Infraestrutura
+    ??? Repositories/                   # Data Access
+    ??? SAP/                            # SAP Integration (Mock)
 ```
 
-### ?? Separação de Responsabilidades
+### Separação de Responsabilidades
 
 | Camada | Responsabilidade |
 |--------|------------------|
@@ -59,7 +59,7 @@ src/
 
 ---
 
-## ?? Segurança (OWASP Top 10 - 2021)
+## Segurança (OWASP Top 10 - 2021)
 
 ### Proteções Implementadas
 
@@ -96,7 +96,7 @@ X-API-Key: SAP-API-KEY-DEMO-2026-ACHE-DESAFIO
 
 ---
 
-## ?? Integração SAP S/4HANA
+## Integração SAP S/4HANA
 
 ### Especificações Técnicas
 
@@ -116,9 +116,9 @@ X-API-Key: SAP-API-KEY-DEMO-2026-ACHE-DESAFIO
 
 ---
 
-## ?? Endpoints da API
+## Endpoints da API
 
-### 1?? GET - Buscar Pedido de Venda
+### 1. GET - Buscar Pedido de Venda
 
 **Request**
 ```http
@@ -150,7 +150,7 @@ X-API-Key: SAP-API-KEY-DEMO-2026-ACHE-DESAFIO
 
 ---
 
-### 2?? POST - Criar Pedido de Venda
+### 2. POST - Criar Pedido de Venda
 
 **Request**
 ```http
@@ -195,7 +195,7 @@ Content-Type: application/json
 }
 ```
 
-### ?? Formato do Order ID
+### Formato do Order ID
 
 Padrão: `SO{yyyyMMdd}{nnn}`
 
@@ -209,7 +209,7 @@ Padrão: `SO{yyyyMMdd}{nnn}`
 
 ---
 
-## ?? Como Executar
+## Como Executar
 
 ### Pré-requisitos
 
@@ -218,35 +218,35 @@ Padrão: `SO{yyyyMMdd}{nnn}`
 
 ### Passo a Passo
 
-#### 1. Clonar o repositório
+**1. Clonar o repositório**
 ```bash
 git clone https://github.com/RenanMunizDev/DesafioTecnico_Ache.git
 cd DesafioTecnico_Ache
 ```
 
-#### 2. Restaurar dependências
+**2. Restaurar dependências**
 ```bash
 dotnet restore
 ```
 
-#### 3. Build da solução
+**3. Build da solução**
 ```bash
 dotnet build
 ```
 
-#### 4. Executar a API
+**4. Executar a API**
 ```bash
 cd src/DesafioTecnico_Ache.API
 dotnet run
 ```
 
-#### 5. Acessar Swagger
+**5. Acessar Swagger**
 - URL: `https://localhost:7000/swagger` (ou porta indicada no console)
 - Documentação interativa completa disponível
 
 ---
 
-## ?? Testando a API
+## Testando a API
 
 ### Usando Swagger UI
 
@@ -258,23 +258,13 @@ dotnet run
 
 ### Fluxo de Teste Recomendado
 
-```mermaid
-graph LR
-    A[GET Mock] --> B[POST Criar]
-    B --> C[GET Criado]
-    
-    style A fill:#90EE90
-    style B fill:#FFD700
-    style C fill:#87CEEB
-```
-
-1. **GET** `/api/v1/salesorders/SO20260108001` ? Buscar pedido mock
-2. **POST** `/api/v1/salesorders` ? Criar novo pedido (retorna `SO20260108004`)
-3. **GET** `/api/v1/salesorders/SO20260108004` ? Buscar pedido criado
+1. **GET** `/api/v1/salesorders/SO20260108001` - Buscar pedido mock existente
+2. **POST** `/api/v1/salesorders` - Criar novo pedido (retornará ID como `SO20260108004`)
+3. **GET** `/api/v1/salesorders/SO20260108004` - Buscar o pedido recém-criado
 
 ---
 
-## ?? Dados Mock Disponíveis
+## Dados Mock Disponíveis
 
 A API já vem com **3 pedidos** pré-cadastrados para teste:
 
@@ -288,7 +278,7 @@ A API já vem com **3 pedidos** pré-cadastrados para teste:
 
 ---
 
-## ?? Boas Práticas Aplicadas
+## Boas Práticas Aplicadas
 
 ### SOLID Principles
 
@@ -309,15 +299,15 @@ A API já vem com **3 pedidos** pré-cadastrados para teste:
 
 ### Padrões de Projeto
 
-- ??? **Clean Architecture** - Separação de camadas
-- ? **CQRS** - Commands e Queries separados
-- ?? **Repository Pattern** - Abstração de dados
-- ?? **Dependency Injection** - IoC nativo do .NET
-- ??? **Middleware Pattern** - Cross-cutting concerns
+- **Clean Architecture** - Separação de camadas
+- **CQRS** - Commands e Queries separados
+- **Repository Pattern** - Abstração de dados
+- **Dependency Injection** - IoC nativo do .NET
+- **Middleware Pattern** - Cross-cutting concerns
 
 ---
 
-## ?? Notas Técnicas
+## Notas Técnicas
 
 ### Implementações Destaque
 
@@ -356,7 +346,7 @@ A API já vem com **3 pedidos** pré-cadastrados para teste:
 
 ---
 
-## ?? Roadmap para Produção
+## Roadmap para Produção
 
 ### Segurança
 - [ ] Implementar OAuth 2.0 / JWT
@@ -394,13 +384,13 @@ A API já vem com **3 pedidos** pré-cadastrados para teste:
 
 ---
 
-## ?? Licença
+## Licença
 
 Este projeto foi desenvolvido como parte de um desafio técnico.
 
 ---
 
-## ????? Autor
+## Autor
 
 **Renan Muniz**
 
@@ -408,7 +398,7 @@ Este projeto foi desenvolvido como parte de um desafio técnico.
 
 ---
 
-## ?? Conformidade
+## Conformidade
 
 ? **API REST** em .NET 8 (LTS)  
 ? **GET + POST** implementados  
