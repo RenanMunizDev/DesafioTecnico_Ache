@@ -29,23 +29,23 @@ Esta solução implementa operações de **GET** e **POST** para gerenciamento de pe
 
 ```
 src/
-??? DesafioTecnico_Ache.API/          # Camada de Apresentação
-?   ??? Controllers/                   # Controllers REST
-?   ??? Middleware/                    # Security & Error Handling
-?   ??? Program.cs                     # DI Container & Startup
-?
-??? DesafioTecnico_Ache.Application/  # Camada de Aplicação
-?   ??? Commands/                      # Write Operations (CQRS)
-?   ??? Queries/                       # Read Operations (CQRS)
-?   ??? DTOs/                          # Data Transfer Objects
-?
-??? DesafioTecnico_Ache.Domain/       # Camada de Domínio
-?   ??? Entities/                      # Domain Models
-?   ??? Interfaces/                    # Abstractions
-?
-??? DesafioTecnico_Ache.Infrastructure/ # Camada de Infraestrutura
-    ??? Repositories/                   # Data Access
-    ??? SAP/                            # SAP Integration (Mock)
++-- DesafioTecnico_Ache.API/          # Camada de Apresentação
+|   +-- Controllers/                   # Controllers REST
+|   +-- Middleware/                    # Security & Error Handling
+|   +-- Program.cs                     # DI Container & Startup
+|
++-- DesafioTecnico_Ache.Application/  # Camada de Aplicação
+|   +-- Commands/                      # Write Operations (CQRS)
+|   +-- Queries/                       # Read Operations (CQRS)
+|   +-- DTOs/                          # Data Transfer Objects
+|
++-- DesafioTecnico_Ache.Domain/       # Camada de Domínio
+|   +-- Entities/                      # Domain Models
+|   +-- Interfaces/                    # Abstractions
+|
++-- DesafioTecnico_Ache.Infrastructure/ # Camada de Infraestrutura
+    +-- Repositories/                   # Data Access
+    +-- SAP/                            # SAP Integration (Mock)
 ```
 
 ### Separação de Responsabilidades
@@ -65,13 +65,13 @@ src/
 
 | # | Vulnerabilidade | Proteção Implementada |
 |---|-----------------|----------------------|
-| **A01** | Broken Access Control | ? API Key obrigatória + Rate Limiting |
-| **A02** | Cryptographic Failures | ? HTTPS Enforcement + TLS 1.2+ |
-| **A03** | Injection | ? Validações de entrada + Tipos seguros |
-| **A04** | Insecure Design | ? Clean Architecture + Fail-safe |
-| **A05** | Security Misconfiguration | ? Security Headers + CORS |
-| **A07** | Authentication Failures | ? API Key validation |
-| **A09** | Security Logging Failures | ? Logging estruturado |
+| **A01** | Broken Access Control | API Key obrigatória + Rate Limiting |
+| **A02** | Cryptographic Failures | HTTPS Enforcement + TLS 1.2+ |
+| **A03** | Injection | Validações de entrada + Tipos seguros |
+| **A04** | Insecure Design | Clean Architecture + Fail-safe |
+| **A05** | Security Misconfiguration | Security Headers + CORS |
+| **A07** | Authentication Failures | API Key validation |
+| **A09** | Security Logging Failures | Logging estruturado |
 
 #### Detalhes de Implementação
 
@@ -251,7 +251,7 @@ dotnet run
 ### Usando Swagger UI
 
 1. Acesse o Swagger UI no navegador
-2. Clique no botão **"Authorize"** ??
+2. Clique no botão **"Authorize"**
 3. Insira a API Key: `SAP-API-KEY-DEMO-2026-ACHE-DESAFIO`
 4. Clique em **"Authorize"** e depois **"Close"**
 5. Teste os endpoints disponíveis
@@ -274,7 +274,7 @@ A API já vem com **3 pedidos** pré-cadastrados para teste:
 | `SO20260108002` | Drogaria Moderna S.A. | PROCESSING | 1 | R$ 840,00 |
 | `SO20260108003` | Rede Saúde Plus | PENDING | 3 | R$ 1.359,00 |
 
-> ?? **Importante**: Os pedidos criados via POST são persistidos em memória durante toda a execução da aplicação. Ao reiniciar a API, apenas os 3 pedidos mock estarão disponíveis novamente.
+> **IMPORTANTE**: Os pedidos criados via POST são persistidos em memória durante toda a execução da aplicação. Ao reiniciar a API, apenas os 3 pedidos mock estarão disponíveis novamente.
 
 ---
 
@@ -292,10 +292,10 @@ A API já vem com **3 pedidos** pré-cadastrados para teste:
 
 ### Outros Princípios
 
-- ? **DRY** (Don't Repeat Yourself) - Reutilização via abstrações
-- ? **KISS** (Keep It Simple, Stupid) - Código simples e direto
-- ? **YAGNI** (You Aren't Gonna Need It) - Apenas o necessário
-- ? **Clean Code** - Nomenclatura clara, métodos pequenos
+- **DRY** (Don't Repeat Yourself) - Reutilização via abstrações
+- **KISS** (Keep It Simple, Stupid) - Código simples e direto
+- **YAGNI** (You Aren't Gonna Need It) - Apenas o necessário
+- **Clean Code** - Nomenclatura clara, métodos pequenos
 
 ### Padrões de Projeto
 
@@ -413,8 +413,8 @@ Este projeto foi desenvolvido como parte de um desafio técnico.
 
 <div align="center">
 
-**Desenvolvido com ?? seguindo as melhores práticas de arquitetura de software e segurança**
+**Desenvolvido seguindo as melhores práticas de arquitetura de software e segurança**
 
-? Se este projeto foi útil, considere dar uma estrela!
+Se este projeto foi útil, considere dar uma estrela!
 
 </div>
